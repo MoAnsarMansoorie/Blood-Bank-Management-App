@@ -3,8 +3,9 @@ const dotenv = require("dotenv")
 const colors = require("colors")
 const morgan = require("morgan")
 const cors = require("cors")
-const testRoute = require("./routes/testRoute")
 const connectToDB = require("./config/db")
+const testRoute = require("./routes/testRoute")
+const authRoute = require("./routes/authRoute")
 
 // dotenv config
 dotenv.config()
@@ -25,6 +26,7 @@ const PORT = process.env.PORT || 8080
 
 // middleware
 app.use("/api/v1/test", testRoute)
+app.use("/api/v1/auth", authRoute)
 
 // routes
 // test route
