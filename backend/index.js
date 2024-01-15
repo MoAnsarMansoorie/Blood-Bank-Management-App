@@ -4,9 +4,13 @@ const colors = require("colors")
 const morgan = require("morgan")
 const cors = require("cors")
 const testRoute = require("./routes/testRoute")
+const connectToDB = require("./config/db")
 
 // dotenv config
 dotenv.config()
+
+// databse config
+connectToDB()
 
 // rest object
 const app = express()
