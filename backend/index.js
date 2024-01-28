@@ -6,6 +6,7 @@ const cors = require("cors")
 const connectToDB = require("./config/db")
 const testRoute = require("./routes/testRoute")
 const authRoute = require("./routes/authRoute")
+const inventoryRoute = require("./routes/inventoryRoute")
 
 // dotenv config
 dotenv.config()
@@ -27,6 +28,7 @@ const PORT = process.env.PORT || 8080
 // middleware
 app.use("/api/v1/test", testRoute)
 app.use("/api/v1/auth", authRoute)
+app.use("/api/v1/inventory", inventoryRoute)
 
 // routes
 // test route
